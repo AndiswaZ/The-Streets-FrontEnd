@@ -1,0 +1,17 @@
+<header class="navbar">
+  <div class="nav-left">
+    <h1 class="logo">The Streets</h1>
+    <a *ngIf="hasPosts" routerLink="/create"> Create </a>
+  </div>
+
+  <div class="nav-right">
+    <input placeholder="ID" />
+    <input placeholder="Name" />
+    <select>
+      <option>User</option>
+      <option>Admin</option>
+    </select>
+    <button>Use</button>
+    <button class="clear">Clear</button>
+  </div>
+</header>

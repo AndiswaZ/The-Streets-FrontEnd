@@ -1,0 +1,67 @@
+<section *ngIf="loading" class="loading">
+  <p>Loading posts...</p>
+</section>
+
+<section *ngIf="!loading && posts.length === 0" class="empty-state">
+  <h2>No posts yet</h2>
+  <p>Be the first to share the tea ☕</p>
+  <button routerLink="/create">Create Post</button>
+</section>
+
+<section class="post-feed" *ngIf="!loading && posts.length > 0">
+  <article
+    class="post-card clickable"
+    *ngFor="let p of posts"
+    [routerLink]="['/post', p.id]"
+  >
+    <!-- HEADER -->
+    <header class="meta">
+      <div class="user">
+        <div class="avatar">
+          {{ (p.createdByDisplayName || p.createdByUserId)[0] }}
+        </div>
+
+        <div class="user-info">
+          <span class="author">
+            {{ p.createdByDisplayName || p.createdByUserId }}
+          </span>
+
+          <span class="time">
+            {{ p.createdAt | timeAgo }}
+          </span>
+
+          <span *ngIf="p.updatedAt" class="edit">
+            · edited {{ p.updatedAt | timeAgo }}
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- MESSAGE -->
+    <p class="message">
+      {{ p.message }}
+    </p>
+
+    <!-- ACTIONS -->
+    <footer class="actions">
+      <button
+        class="icon-btn"
+        [class.liked]="p.liked"
+        ✅
+        (click)="toggleLike(p); $event.stopPropagation()"
+      >
+        ❤️ {{ p.likeCount }}
+      </button>
+
+      <a
+        class="icon-link"
+        [routerLink]="['/post', p.id]"
+        (click)="$event.stopPropagation()"
+      >
+        💬 <span>{{ p.commentCount }}</span>
+      </a>
+
+      <span class="spacer"></span>
+    </footer>
+  </article>
+</section>

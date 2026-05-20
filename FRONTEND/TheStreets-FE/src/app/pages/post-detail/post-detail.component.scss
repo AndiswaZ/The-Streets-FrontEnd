@@ -1,0 +1,183 @@
+/* MAIN POST CARD */
+.post {
+  border-radius: 16px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin: 20px auto;
+  max-width: 700px;
+  transition: 0.2s;
+}
+
+.post:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADER */
+.meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #888;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+/* BACK LINK */
+.back {
+  text-decoration: none;
+  color: #e91e63;
+  font-weight: 500;
+}
+
+/* AUTHOR */
+.author {
+  font-weight: 600;
+  color: #333;
+}
+
+/* SPACING PUSHER */
+.spacer {
+  flex: 1;
+}
+
+/* MESSAGE */
+.message {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 12px 0 18px;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* PRIMARY BUTTON (LIKE) */
+.actions button {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* LIKE */
+.actions button:first-child {
+  background: #ffe4ef;
+}
+
+.actions button:first-child:hover {
+  background: #ffcade;
+}
+
+/* UNLIKE */
+.actions button:nth-child(2) {
+  background: #f1f1f1;
+}
+
+/* DELETE BUTTON */
+.meta button {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+/* COMMENTS SECTION */
+.comments {
+  margin-top: 20px;
+}
+
+/* COMMENT INPUT */
+.comments .new-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+textarea {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  font-family: inherit;
+  resize: none;
+}
+
+/* COMMENT BUTTON */
+.comments button {
+  background: linear-gradient(135deg, #e91e63, #ff4d8d);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* COMMENT LIST ITEM */
+.comment {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  align-items: flex-start;
+}
+
+/* COMMENT META */
+.c-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #888;
+  font-size: 12px;
+}
+
+/* NAME */
+.who {
+  font-weight: 600;
+  color: #444;
+}
+
+/* MESSAGE BUBBLE */
+.c-msg {
+  background: #f9f9fb;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-top: 5px;
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+/* DELETE COMMENT */
+.comment button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #ff4d4f;
+  cursor: pointer;
+}
+
+::selection {
+  background: #e91e63;
+  color: white;
+}
+
+.like-btn {
+  background: #ffe4ef;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.like-btn:hover {
+  transform: scale(1.05);
+}
+
+.like-btn.active {
+  color: #e91e63;
+}

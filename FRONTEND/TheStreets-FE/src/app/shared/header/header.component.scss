@@ -1,0 +1,57 @@
+.topbar {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.brand {
+  font-weight: 700;
+}
+.auth {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.auth input,
+.auth select {
+  padding: 4px 6px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e91e63, #ff4d8d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.dropdown {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.dropdown button {
+  padding: 10px 15px;
+  width: 100%;
+}

@@ -1,0 +1,11 @@
+<div class="overlay" *ngIf="open">
+  <div class="modal">
+    <h3>{{ title }}</h3>
+    <p>{{ message }}</p>
+
+    <div class="actions">
+      <button class="cancel" (click)="cancel()">Cancel</button>
+      <button class="confirm" (click)="confirm()">Okay 💖</button>
+    </div>
+  </div>
+</div>

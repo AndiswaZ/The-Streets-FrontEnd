@@ -175,7 +175,6 @@ a {
   animation: fadeIn 0.3s ease;
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -275,4 +274,38 @@ a {
   text-decoration: none;
   color: #e91e63;
   font-weight: 500;
+}
+
+/*THEME*/
+.theme-pink {
+  --primary: #ff2f7d;
+}
+
+.theme-purple {
+  --primary: #8b5cf6;
+}
+
+.theme-blue {
+  --primary: #3b82f6;
+}
+
+.theme-green {
+  --primary: #22c55e;
+}
+
+.theme-orange {
+  --primary: #f97316;
+}
+
+/* DARK MODE */
+.dark-theme {
+  background: #121212;
+  color: white;
+}
+
+.dark-theme .profile-card,
+.dark-theme .post-card,
+.dark-theme .auth-card {
+  background: #1e1e1e;
+  color: white;
 }

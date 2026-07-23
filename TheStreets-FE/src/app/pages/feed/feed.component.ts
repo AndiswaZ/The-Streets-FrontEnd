@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 import { PostsService, PostResponse } from '../../core/posts.service';
 import { TimeAgoPipe } from '../../shared/time-ago.pipe';
 import { DevUserService } from '../../core/dev-user.service';
+import { FormsModule } from '@angular/forms';
 
 type UI_Post = PostResponse & {
   _liked?: boolean; // animation
@@ -13,7 +14,7 @@ type UI_Post = PostResponse & {
 @Component({
   standalone: true,
   selector: 'app-feed',
-  imports: [CommonModule, RouterLink, TimeAgoPipe],
+  imports: [CommonModule, RouterLink, TimeAgoPipe, FormsModule],
   templateUrl: './feed.component.html',
   styleUrls: ['./feed.component.scss'],
 })
@@ -23,6 +24,8 @@ export class FeedComponent implements OnInit {
 
   loading = false;
   posts: UI_Post[] = [];
+
+  searchText = '';
 
   me = this.dev.get();
 
@@ -48,6 +51,21 @@ export class FeedComponent implements OnInit {
         this.loading = false;
       },
     });
+  }
+
+  get filteredPosts(): UI_Post[] {
+    if (!this.searchText.trim()) {
+      return this.posts;
+    }
+
+    const term = this.searchText.toLowerCase();
+
+    return this.posts.filter(
+      (p) =>
+        p.message.toLowerCase().includes(term) ||
+        (p.createdByDisplayName ?? '').toLowerCase().includes(term) ||
+        (p.createdByUserId ?? '').toLowerCase().includes(term),
+    );
   }
 
   canEdit(p: PostResponse) {

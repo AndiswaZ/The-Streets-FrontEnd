@@ -8,10 +8,28 @@
   <button routerLink="/create">Create Post</button>
 </section>
 
+<div class="feed-welcome">
+  <h2>☕ What's the tea today?</h2>
+
+  <p>Search for posts, people and street gossip ✨</p>
+</div>
+
+<div class="search-container">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+
+    <input
+      type="text"
+      [(ngModel)]="searchText"
+      placeholder="Search people, tea, drama..."
+    />
+  </div>
+</div>
+
 <section class="post-feed" *ngIf="!loading && posts.length > 0">
   <article
     class="post-card clickable"
-    *ngFor="let p of posts"
+    *ngFor="let p of filteredPosts"
     [routerLink]="['/post', p.id]"
   >
     <!-- HEADER -->

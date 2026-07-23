@@ -1,0 +1,21 @@
+<div class="auth-page">
+  <div class="floating-hearts">💖 ☕ ✨ 💕</div>
+  <div class="auth-card">
+    <div class="logo">☕</div>
+
+    <h1>The Streets</h1>
+
+    <p class="subtitle">Spill the tea. Hear the tea. Be the tea.</p>
+
+    <input [(ngModel)]="user.id" placeholder="User ID" />
+
+    <input type="password" [(ngModel)]="user.password" placeholder="Password" />
+
+    <button (click)="login()">Sign In ✨</button>
+
+    <p class="link-text">
+      New to The Streets?
+      <a routerLink="/register">Create Account 💖</a>
+    </p>
+  </div>
+</div>

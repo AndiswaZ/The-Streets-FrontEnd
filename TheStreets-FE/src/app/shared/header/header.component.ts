@@ -23,16 +23,21 @@ export class HeaderComponent implements OnInit {
     role: 'User',
   };
 
-menuOpen = false;
+  menuOpen = false;
 
-toggleMenu() {
-  this.menuOpen = !this.menuOpen;
-}
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 
-logout() {
-  this.dev.clear();
-  this.router.navigate(['/login']);
-}
+  goToProfile() {
+    this.menuOpen = false;
+    this.router.navigate(['/profile']);
+  }
+
+  logout() {
+    this.dev.clear();
+    this.router.navigate(['/login']);
+  }
 
   ngOnInit() {
     const saved = this.dev.get();
@@ -45,6 +50,4 @@ logout() {
     this.dev.set(this.user as DevUser);
     this.router.navigateByUrl('/');
   }
-
-
 }

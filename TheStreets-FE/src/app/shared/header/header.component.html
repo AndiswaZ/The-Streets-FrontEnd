@@ -1,0 +1,22 @@
+<header class="navbar">
+  <div class="nav-left">
+    <h2>The Streets</h2>
+    <a *ngIf="hasPosts" routerLink="/create"> Create </a>
+  </div>
+
+  <div class="nav-right">
+    <div class="profile" (click)="toggleMenu()">
+      <div class="avatar">
+        {{ user.name?.charAt(0)?.toUpperCase() }}
+      </div>
+
+      <span>{{ user.name }}</span>
+
+      <div class="dropdown" *ngIf="menuOpen">
+        <button (click)="goToProfile()">👤 Profile</button>
+
+        <button (click)="logout()">🚪 Logout</button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+<div class="profile-page">
+  <div class="profile-card">
+    <div class="avatar">
+      {{ user?.name?.charAt(0)?.toUpperCase() }}
+    </div>
+
+    <h1>{{ user?.name }}</h1>
+
+    <p class="userid">&#64;{{ user?.id }}</p>
+
+    <div class="role">
+      {{ user?.role }}
+    </div>
+
+    <div class="coming-soon">
+      <h3>✨ Preferences ✨</h3>
+
+     <div class="setting-row">
+  <span>🌙 Dark Mode</span>
+
+  <button (click)="toggleDarkMode()">
+    {{ darkMode ? 'ON' : 'OFF' }}
+  </button>
+</div>
+
+      <div class="themes"><div >
+
+  <button (click)="setTheme('pink')">💖</button>
+
+  <button (click)="setTheme('purple')">💜</button>
+
+  <button (click)="setTheme('blue')">💙</button>
+
+  <button (click)="setTheme('green')">💚</button>
+
+  <button (click)="setTheme('orange')">🧡</button>
+
+</div>
+
+
+
+      <p>Edit Profile coming soon ✏️</p>
+    </div>
+  </div>
+</div>
